@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="aModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="book">
+    <Key>
+      <PropertyRef Name="bookid" />
+    </Key>
+    <Property Name="bookid" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="bookname" Type="nvarchar" MaxLength="50" />
+    <Property Name="zz" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="c">
+    <Key>
+      <PropertyRef Name="cno" />
+    </Key>
+    <Property Name="cno" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cname" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="cj">
+    <Key>
+      <PropertyRef Name="sno" />
+      <PropertyRef Name="cno" />
+    </Key>
+    <Property Name="sno" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cno" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="fs" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="myuser">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="s">
+    <Key>
+      <PropertyRef Name="sno" />
+    </Key>
+    <Property Name="sno" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="50" />
+    <Property Name="sex" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="aModelStoreContainer">
+    <EntitySet Name="book" EntityType="Self.book" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="c" EntityType="Self.c" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cj" EntityType="Self.cj" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="myuser" EntityType="Self.myuser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="s" EntityType="Self.s" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
