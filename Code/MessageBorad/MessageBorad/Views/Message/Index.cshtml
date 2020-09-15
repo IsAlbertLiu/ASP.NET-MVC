@@ -1,17 +1,27 @@
-﻿@model IEnumerable<MessageBorad.Models.Message>
+﻿
+<!-- 
+    model 是一个声明，后门接一个类是 Message 的集合对象（IEnumerable） 
+    -->>
+@model IEnumerable<MessageBorad.Models.Message>
 
+<!--传给主板页面（Layout Page）将显示在 HTML 中的<title>的标签里面 -->>
 @{
+    
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
 
 <p>
+    <!--创建一个超链接 第一个参数是链接名称，第二个参数是动作（Action）-->>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table>
     <tr>
         <th>
+            <!--Html.DisplayNameFor 输出特定字段的显示名称 传入的参数使用 Lambda Expression 
+                Html.DisplayNameFor 会默认输出属性名称，所以默认显示是  姓名
+                -->>
             @Html.DisplayNameFor(model => model.姓名)
         </th>
         <th>
@@ -23,6 +33,9 @@
         <th></th>
     </tr>
 
+<!--
+    foreach 是一个循环，其数据来源于 Model 对象。这里的Model对象是每个 view 都有的属性，代表的就是从 Controller 传过来的属性    
+-->>
 @foreach (var item in Model) {
     <tr>
         <td>

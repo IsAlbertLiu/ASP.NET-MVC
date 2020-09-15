@@ -11,6 +11,7 @@ namespace MessageBorad.Controllers
 {
     public class MessageController : Controller
     {
+        // db 的类私有变量，其类型为 MessageBoradContext 数据库内容类，在整个 Controller 类中都会使用 db 这个变量进行数据库访问
         private MessageBoradContext db = new MessageBoradContext();
 
         //
@@ -18,6 +19,7 @@ namespace MessageBorad.Controllers
 
         public ActionResult Index()
         {
+            // 视图 View() 是来自于 Controller 基类的一个辅助方法（Helper Method）
             return View(db.Messages.ToList());
         }
 
@@ -37,6 +39,7 @@ namespace MessageBorad.Controllers
         //
         // GET: /Message/Create
 
+       // 给 GET 使用的 create()
         public ActionResult Create()
         {
             return View();
@@ -47,6 +50,8 @@ namespace MessageBorad.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+
+        // 给 POST 使用的 create()
         public ActionResult Create(Message message)
         {
             if (ModelState.IsValid)

@@ -6,8 +6,15 @@
 
 <h2>Create</h2>
 
+
+<!--窗体内的HTML声明-->>
+<!--
+    Html.BeginForm() 辅助方法将会输出 form 标签，必须使用 using 
+
+-->>
 @using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
+    // 验证表单错误的验证失败时，显示的错误信息
     @Html.ValidationSummary(true)
 
     <fieldset>
