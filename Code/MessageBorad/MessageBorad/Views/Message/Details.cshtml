@@ -1,0 +1,36 @@
+﻿@model MessageBorad.Models.Message
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Message</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.姓名)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.姓名)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.内容)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.内容)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("编辑", "编辑", new { id=Model.Id }) |
+    @Html.ActionLink("回到列表", "Index")
+</p>
