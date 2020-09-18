@@ -100,6 +100,49 @@ namespace connectData
             foreach (var c in a)
              Console.WriteLine(c.name);
              Console.Read();   
+            
+            //------------------------------------------
+             //多表查询
+
+            //var a=from b in db.cj //b是代表成绩表
+             //     join c in db.c//c代表课程表
+                  //on b.cno equals c.cno//通过课程号相等连接
+                 // select b;//从b这张表中查找
+          //  foreach (var d in a)
+           //     Console.WriteLine(d.fs);
+          //  Console.Read();
+
+
+          //  var a = from b in db.cj
+                  //  join c in db.c
+                 //   on b.cno equals c.cno
+                   // select new//如果你需要的字段来自于多张表，那么可以考虑用select new 
+                    //{
+                       // c.cname,//c是指代课程表
+                       // b.fs//b是指代成绩表
+                   // };
+         //   foreach (var d in a)
+               // Console.WriteLine("{0}  {1}",d.cname,d.fs);
+           // Console.Read();
+
+
+
+            //三张表连接查询
+
+            var a = from b in db.cj//b代表成绩表
+                    join c in db.c//c代表课程表
+                    on b.cno equals c.cno//成绩表和课程表通过课程号来连接
+                    join d in db.s//d代表学生表
+                    on b.sno equals d.sno//成绩表和学生表通过学号来连接
+                    select new
+                    {
+                        d.name,//学生表的姓名
+                        c.cname,//课程表的课程名
+                        b.fs//成绩表的分数
+                    };
+            foreach(var d in a)
+                   Console.WriteLine("{0} {1}  {2}",d.name,d.cname,d.fs);
+            Console.Read();
         }
     }
 }
