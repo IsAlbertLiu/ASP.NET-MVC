@@ -68,6 +68,38 @@ namespace connectData
             foreach (var c in a)
                 Console.WriteLine(c.name);      
             Console.Read();
+            
+            // 9月18日加上
+             //排序
+            //基于表达式的
+          //  var a = from b in db.s orderby b.name select b;
+            //foreach (var c in a)
+             //   Console.WriteLine(c.name);
+          //  Console.Read();
+
+           //基于函数的排序
+            //var a = db.s.OrderBy(b => b.name);//b同样代表学生表
+          //  foreach (var c in a)
+           //  Console.WriteLine(c.name);
+            // Console.Read();
+
+            //从第三行开始取数据
+          //  var a = db.s.OrderBy(b => b.sno).Skip(2);//skip(2)代表跳过两条数据，也就是从第三条数据开始取
+            // foreach (var c in a)
+            // Console.WriteLine(c.name);
+            // Console.Read();
+
+            //取四条数据
+          //  var a = db.s.OrderBy(b => b.sno).Take(4);//take(4)代表取四条数据
+           //  foreach (var c in a)
+           //  Console.WriteLine(c.name);
+           //  Console.Read();
+
+            //取第二条到第四条数据
+            var a = db.s.OrderBy(b => b.sno).Skip(1).Take(3);
+            foreach (var c in a)
+             Console.WriteLine(c.name);
+             Console.Read();   
         }
     }
 }
