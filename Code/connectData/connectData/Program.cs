@@ -143,6 +143,72 @@ namespace connectData
             foreach(var d in a)
                    Console.WriteLine("{0} {1}  {2}",d.name,d.cname,d.fs);
             Console.Read();
+            
+            //-----------------------------------09 22 课程
+                aEntities db = new aEntities();
+            //基于表达式的分组
+            //统计每个学号的总分
+         //   var a = from b in db.cj group b by b.sno;//group后面是表名，by后面是字段名
+          //  foreach(var c in a)
+          //  {
+            //    Console.Write(c.Key+"     ");//c.key代表根据哪一个分组
+             //   Console.WriteLine(c.Sum(d => d.fs));//d代表成绩表
+           // }
+          //  Console.Read();
+
+            //基于函数的写法
+        //    var a = db.cj.GroupBy(b => b.sno);
+      // //     foreach(var c in a)
+          //  {
+             //   Console.Write(c.Key+"     ");//c.key代表根据哪一个分组
+             //   Console.WriteLine(c.Sum(d => d.fs));//d代表成绩表
+        //   }
+     //  Console.Read();
+
+          //  var a = db.s.GroupBy(b => b.sex);//b代表学生表，在学生表中根据性别分组
+        //       foreach(var c in a)
+         //  {
+           //     Console.Write(c.Key+"     ");//c.key代表根据哪一个分组
+          //   Console.WriteLine(c.Count());//d代表成绩表
+        //  }
+   //   Console.Read();
+
+
+            //分组筛选
+            //var a = from b in db.cj//b代表成绩表
+                  //  group b by b.sno into g//通过学号分组,把查询的结果放在g这个变量中
+                  //  where g.Count() > 2//某一个学号对应的记录大于2
+                  //  orderby g.Count() descending//降序
+                   // select new
+                   // {
+                     //   g.Key,//代表学号字段
+                       //  数量=g.Count()//把每一个学号所对应的记录放在数量这个变量
+                  //  };
+         //    foreach(var c in a)
+         //  {
+              //  Console.Write(c.Key+"     ");
+           //  Console.WriteLine(c.数量);
+         // }
+     // Console.Read();
+
+
+            //统计每一个学生的平均成绩
+          var f = from a in db.s//a代表学生表
+                    join b in db.cj on a.sno equals b.sno into c//b代表成绩表，两张表通过学号连接，查询的结果放在c这个变量中
+                    select new
+                        {
+                           a.name,
+                            avg = c.Average(d => d.fs)//平均成绩
+                        };
+            foreach (var d in f)
+            {
+               Console.Write(d.name + "   ");
+             Console.Write(d.avg + "  ");
+                Console.WriteLine();
+            }
+            Console.Read();
+
+        
         }
     }
 }
