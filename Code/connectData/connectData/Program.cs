@@ -207,7 +207,54 @@ namespace connectData
                 Console.WriteLine();
             }
             Console.Read();
+            
+            //---------------------0922增删查改
+                   //增加
+         //   var a = new s() { sno = "6", name = "鸣人", sex = "男" };//创建一个学生的对象，并且给学号姓名性别赋值
+          //  db.s.Add(a);
+          //  db.SaveChanges();//保存所改变的
 
+            //如何考虑主键重复
+         //   var a = db.s.Where(b => b.sno == "6").FirstOrDefault();
+           // if(a==null)
+           // {
+               // var b = new s() { sno = "6", name = "鸣人", sex = "男" };//创建一个学生的对象，并且给学号姓名性别赋值
+              //  db.s.Add(b);
+               // db.SaveChanges();//保存所改变的
+          //  }
+
+            //修改
+          //  var a = db.c.Where(b => b.cno == "3").SingleOrDefault();//首先查询
+         //   var a = db.c.FirstOrDefault(b => b.cno == "3");
+          //  if(a!=null)
+          //  {
+               // a.cname = "ASP.NET";
+               // db.SaveChanges();
+           // }
+
+            //批量修改
+
+         //   var a = db.s.Where(b => b.sex == "男");
+          //  foreach (var c in a)
+        //        c.sex = "女";
+        //    db.SaveChanges();
+            
+           
+
+            //删除
+         //   var a = db.s.Where(b => b.sno == "6").FirstOrDefault();
+         //   if (a != null)
+           // {
+              //  db.s.Remove(a);
+              //  db.SaveChanges();
+          //  }
+
+            //批量删除
+            var a = db.myuser.Where(b => b.password == "1");
+           foreach(var c in a)
+                db.myuser.Remove(c);
+                db.SaveChanges();
+            
         
         }
     }
