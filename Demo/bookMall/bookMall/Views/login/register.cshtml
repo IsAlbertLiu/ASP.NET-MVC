@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "register";
+}
+@using(Html.BeginForm("register","Login",FormMethod.Post)){
+    @Html.Label("用户名")
+    @Html.TextBox("userName")
+    @Html.Label("密码")
+    @Html.Password("passWord")
+    @Html.Label("确定密码")
+    @Html.Password("passWordAgain")
+    <br/>
+    <input type="submit" value="注册">
+    @ViewBag.message
+    
+}
+<h2>register</h2>

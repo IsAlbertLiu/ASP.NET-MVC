@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+@using(Html.BeginForm("Index","Login",FormMethod.Post)){
+    @Html.Label("用户名")
+    @Html.TextBox("userName")
+    <br/>
+    @Html.Label("密码")
+    @Html.Password("passWord")
+    <br />
+    <input type="submit" value="登陆"/>
+}
+<h2>这是主页，欢迎访问</h2>
