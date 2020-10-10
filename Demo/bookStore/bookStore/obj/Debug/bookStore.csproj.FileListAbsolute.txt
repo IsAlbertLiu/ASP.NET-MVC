@@ -1,0 +1,1 @@
+E:\ASP.NET-MVC\Demo\bookStore\bookStore\obj\Debug\bookStore.csprojResolveAssemblyReference.cache
