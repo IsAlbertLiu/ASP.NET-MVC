@@ -1,0 +1,54 @@
+﻿@using bookMall.Models;
+@model IEnumerable<bookMall.Models.userTable>
+
+@{
+    ViewBag.Title = "admin";
+}
+
+<h2>admin</h2>
+
+@foreach(userTable user in Model){
+    <li>@user.userName</li>
+}
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            用户名
+        </th>
+        <th>
+           密码
+        </th>
+        <th>
+           管理权限
+        </th>
+        <th></th>
+    </tr>
+  
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item
+            @item.userName
+            @* @Html.DisplayFor(modelItem => item.userName)*@
+        </td>
+        <td>
+            @item.passWord
+            @Html.DisplayFor(modelItem => item.passWord)
+        </td>
+        <td>
+            @item.role
+            @Html.DisplayFor(modelItem => item.role)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.userName  }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
