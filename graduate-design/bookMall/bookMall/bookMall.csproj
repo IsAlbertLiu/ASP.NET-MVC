@@ -358,6 +358,11 @@
     <Content Include="Views\Admin\Delete.cshtml" />
     <Content Include="Views\Admin\AddUser.cshtml" />
     <Content Include="Views\Books\Index.cshtml" />
+    <Content Include="Views\Books\buyBook.cshtml" />
+    <Content Include="Views\Books\historyOrders.cshtml" />
+    <Content Include="Views\Books\deleteOrder.cshtml" />
+    <Content Include="Views\Books\unLogging.cshtml" />
+    <Content Include="Views\Admin\AddBooks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

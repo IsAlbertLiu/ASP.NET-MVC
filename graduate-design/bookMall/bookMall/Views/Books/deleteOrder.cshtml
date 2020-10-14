@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "deleteOrder";
+}
+
+<h2>删除订单</h2>
+@using (Html.BeginForm("deleteOrder", "Books", FormMethod.Post))
+{
+     @Html.Label("订单编号")
+    @Html.Display("OrderId")
+    @Html.Label("收货地址")
+    @Html.Display("Address")
+    @Html.Label("书籍编号")
+    @Html.Display("BookId")
+     @Html.Label("购买数量")
+    @Html.Display("Num")
+    
+    <input type="submit" value="删除该订单"/>
+}

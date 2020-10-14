@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Upload";
+}
+
+<h2>Upload</h2>
+<h2>上传文件</h2>
+<br />
+<br />
+
+<h2>当前文件路径为： @ViewBag.url </h2>
+@*new { enctype = "multipart/form-data" }比不可少，否则上传文件不会成功 *@
+@using (Html.BeginForm("Upload", "Default2", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <text>选择上传文件：</text><input name="file" type="file" id="file" />
+    <br />
+    <br />
+    <input type="submit" name="Upload" value="Upload" />
+}

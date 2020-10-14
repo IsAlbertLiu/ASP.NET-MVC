@@ -1,15 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
 namespace uploadPicture.Controllers
 {
-    public class upController : Controller
+    public class Default1Controller : Controller
     {
         //
-        // GET: /up/
+        // GET: /Default1/
 
         public ActionResult Index()
         {
@@ -62,12 +64,13 @@ namespace uploadPicture.Controllers
                     filePath = uploadPath + Path.GetFileName(fileName);
                 }
                 // 把文件的存储路径保存起来
-                SaveUploadFileInfo(fileName, filePath);  // todo：SaveUploadFileInfo方法请自己实现
                 // 保存文件到服务器
                 file.SaveAs(filePath);
             }
 
             return true;
         }
+
+       
     }
 }

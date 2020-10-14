@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "buyBook";
+}
+
+<h2>买书</h2>
+@Html.ActionLink("查看我的买书历史", "historyOrders")
+<table>
+    <tr>
+        <td> 图示编号</td>
+        <td>图书名称</td>
+        <td>价格</td>
+        <td>作者</td>
+    </tr>
+    <tr>
+        <td>@ViewBag.bookId</td>
+        <td>@ViewBag.bookTitle</td>
+        <td>@ViewBag.bookPrice</td>
+        <td>@ViewBag.bookAuthors</td>
+    </tr>
+</table>
+@using (Html.BeginForm("buyBook", "Books", FormMethod.Post))
+{
+    @Html.Label("书籍编号")
+    @Html.Display("bookId1")
+    @Html.Label("地址")
+    @Html.TextBox("address")
+    @Html.Label("数量")
+    @Html.TextBox("count")
+    <br />
+    <input type="submit" value="购书" />
+}

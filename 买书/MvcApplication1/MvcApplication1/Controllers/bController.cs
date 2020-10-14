@@ -20,7 +20,7 @@ namespace MvcApplication1.Controllers
 
         // 买书
         public ActionResult ms(int id)
-        {s
+        {
             var a = db.Books.Where(b => b.BookId == id).FirstOrDefault();
             ViewBag.id1 = id;
             ViewBag.id2 = id;

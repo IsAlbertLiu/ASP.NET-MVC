@@ -15,7 +15,7 @@
                 <div class="float-left">
                     <p class="site-title">
                         <img src="../../Content/logo.png" width="140" height="70" alt="Alternate Text" />
-                        @Html.ActionLink("BookMall", "Index", "Home", new { @class = "slogn" })
+                        @Html.ActionLink("BookMall", "Index", "Books", new { @class = "slogn" })
                     </p>
                 </div>
                 <div class="float-right">
@@ -25,9 +25,8 @@
                     </section>
                     <nav>
                         <ul id="menu">
-                            <li>@Html.ActionLink("主页", "Index", "Home")</li>
-                            <li>@Html.ActionLink("购物车", "About", "Home")</li>
-                            <li>@Html.ActionLink("个人中心", "Contact", "Home")</li>
+                            <li>@Html.ActionLink("主页", "Index", "Books")</li>
+                            <li>@Html.ActionLink("购物车", "historyOrders", "Books")</li>
                         </ul>
                     </nav>
                 </div>

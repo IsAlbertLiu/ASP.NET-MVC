@@ -183,8 +183,9 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\Architecture_NewController.cs" />
+    <Compile Include="Controllers\Default1Controller.cs" />
+    <Compile Include="Controllers\Default2Controller.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\upController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -306,12 +307,17 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Home\UploadImg.cshtml" />
     <Content Include="Views\Architecture_New\Index.cshtml" />
+    <Content Include="Views\Default1\Index.cshtml" />
+    <Content Include="Views\Default2\Upload.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="BulkUpload\UploadFiles\" />
+    <Folder Include="Mock\Learning\" />
     <Folder Include="Pictures\" />
     <Folder Include="Upload\" />
     <Folder Include="Views\Architecture_New\NewSave\" />
+    <Folder Include="Views\UploadFiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

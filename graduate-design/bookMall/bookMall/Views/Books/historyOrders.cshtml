@@ -1,0 +1,48 @@
+﻿@model IEnumerable<bookMall.Models.Orders>
+
+@{
+    ViewBag.Title = "historyOrders";
+}
+
+<h2>我的买书记录</h2>
+
+<table>
+    <tr>
+        <th>
+            订单编号
+        </th>
+        <th>
+            收货地址
+        </th>
+        <th>
+            书籍编号
+        </th>
+
+        <th>
+            购买数量
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Num)
+        </td>
+        <td>
+           
+            @Html.ActionLink("删除订单", "deleteOrder", new { id = item.OrderId })
+        </td>
+    </tr>
+}
+
+</table>
