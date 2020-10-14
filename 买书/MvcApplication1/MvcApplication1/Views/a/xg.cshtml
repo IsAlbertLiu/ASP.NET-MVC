@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "xg";
+}
+
+<h2>xg</h2>
+@using(@Html.BeginForm("xg","a",FormMethod.Post))
+{
+   @Html.Label("学号")
+   @Html.Display("xh")
+    @Html.Label("姓名")
+    @Html.TextBox("xm")
+    @Html.Label("性别")
+    @Html.DropDownList("xb", ViewBag.xb2 as IEnumerable<SelectListItem>)
+    @Html.Label("学院")
+    @Html.DropDownList("xy1", ViewBag.xy2 as IEnumerable<SelectListItem>)
+    @Html.Label("专业")
+    @Html.DropDownList("zy1", ViewBag.zy2 as IEnumerable<SelectListItem>)
+    <input type="submit" value="修改"/>
+}

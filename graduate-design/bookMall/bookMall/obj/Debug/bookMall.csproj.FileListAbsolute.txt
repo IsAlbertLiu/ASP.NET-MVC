@@ -197,6 +197,6 @@ E:\ASP.NET-MVC\graduate-design\bookMall\bookMall\bin\ko\System.Spatial.resources
 E:\ASP.NET-MVC\graduate-design\bookMall\bookMall\bin\ru\System.Spatial.resources.dll
 E:\ASP.NET-MVC\graduate-design\bookMall\bookMall\bin\zh-Hans\System.Spatial.resources.dll
 E:\ASP.NET-MVC\graduate-design\bookMall\bookMall\bin\zh-Hant\System.Spatial.resources.dll
-E:\ASP.NET-MVC\graduate-design\bookMall\bookMall\obj\Debug\bookMall.csprojResolveAssemblyReference.cache
 E:\ASP.NET-MVC\graduate-design\bookMall\bookMall\obj\Debug\bookMall.dll
 E:\ASP.NET-MVC\graduate-design\bookMall\bookMall\obj\Debug\bookMall.pdb
+E:\ASP.NET-MVC\graduate-design\bookMall\bookMall\obj\Debug\bookMall.csprojResolveAssemblyReference.cache

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="aModelStoreContainer" CdmEntityContainer="aEntities">
+    <EntitySetMapping Name="dm_xy">
+      <EntityTypeMapping TypeName="aModel.dm_xy">
+        <MappingFragment StoreEntitySet="dm_xy">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="xy" ColumnName="xy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="dm_zy">
+      <EntityTypeMapping TypeName="aModel.dm_zy">
+        <MappingFragment StoreEntitySet="dm_zy">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="zy" ColumnName="zy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="s">
+      <EntityTypeMapping TypeName="aModel.s">
+        <MappingFragment StoreEntitySet="s">
+          <ScalarProperty Name="sno" ColumnName="sno" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="xy" ColumnName="xy" />
+          <ScalarProperty Name="zy" ColumnName="zy" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

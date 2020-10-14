@@ -1,0 +1,47 @@
+﻿@model IEnumerable<MvcApplication1.Models.Orders>
+
+@{
+    ViewBag.Title = "xq";
+}
+
+<h2>xq</h2>
+
+
+<table>
+    <tr>
+        <th>
+        订单编号
+        </th>
+      
+        <th>
+           书籍编号
+        </th>
+        <th>
+            地址
+        </th>
+        <th>
+           数量
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrderId)
+        </td>
+      
+        <td>
+            @Html.DisplayFor(modelItem => item.Books.BookTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Num)
+        </td>
+      
+    </tr>
+}
+
+</table>

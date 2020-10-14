@@ -1,0 +1,51 @@
+﻿@model IEnumerable<MvcApplication1.Models.Books>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<table>
+    <tr>
+        <th>
+         书籍编号
+        </th>
+        <th>
+        标题
+        </th>
+        <th>
+         价格
+        </th>
+        <th>
+            作者
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            <img src="@item.BookCoverUrl">
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Authors)
+        </td>
+        <td>
+            @Html.ActionLink("购书", "ms", new { id=item.BookId}) |
+          
+        </td>
+    </tr>
+}
+
+</table>

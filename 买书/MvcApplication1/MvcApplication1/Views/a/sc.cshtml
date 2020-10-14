@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "sc";
+}
+
+<h2>sc</h2>
+@using(Html.BeginForm("sc","a",FormMethod.Post))
+{
+    @Html.Label("学号");
+    @Html.Display("xh")
+    @Html.Label("姓名");
+    @Html.Display("xm")
+    @Html.Label("性别");
+    @Html.Display("xb")
+    @Html.Label("学院");
+    @Html.Display("xy1")
+    @Html.Label("专业");
+    @Html.Display("zy1")
+    <br/>
+    <input type="submit" value="删除"/>
+}

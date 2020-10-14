@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Modify";
+}
+
+<h2>修改页面</h2>
+@using (Html.BeginForm("modify","Admin",FormMethod.Post)) { 
+    @Html.Label("用户名")
+    @Html.TextBox("userName");
+    @*@Html.Display("userName")*@
+    @Html.Label("密码")
+    @Html.TextBox("passWord");
+    @Html.Label("用户角色")
+    @Html.DropDownList("role",ViewBag.role2 as IEnumerable<SelectListItem>)
+    <input type="submit" value="修改" />
+}

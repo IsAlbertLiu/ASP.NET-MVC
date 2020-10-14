@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+@using(Html.BeginForm("Delete","Admin",FormMethod.Post)){
+    @Html.Label("用户名")
+    @Html.Display("userName")
+    @Html.Label("密码")
+    @Html.Display("passWord")
+    @Html.Label("用户角色")
+    @Html.Display("role")
+    
+    <input type="submit" value="删除"/>
+    
+
+}

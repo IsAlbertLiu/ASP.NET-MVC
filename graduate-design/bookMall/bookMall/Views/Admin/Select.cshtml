@@ -1,0 +1,55 @@
+﻿@model IEnumerable<bookMall.Models.userTable>
+
+@{
+    ViewBag.Title = "Select";
+}
+
+<h2>管理员页面</h2>
+
+<p>
+    @Html.ActionLink("新建用户", "AddUser")
+</p>
+
+@using (Html.BeginForm("Select", "Admin", FormMethod.Post))
+{
+    @Html.Label("用户ID")
+    @Html.TextBox("userName")
+    <br />
+    <input type="submit" value="查询" />
+}
+<table>
+    <tr>
+        <th>
+            用户姓名
+        </th>
+        <th>
+            用户密码
+        </th>
+        <th>
+            用户角色
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.userName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.passWord)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.role)
+            </td>
+            <td>
+
+                @Html.ActionLink("修改数据", "Modify", new { id = item.userName }) |
+
+                @Html.ActionLink("删除", "Delete", new { id = item.userName })
+            </td>
+        
+        </tr>
+    }
+    </table>
+   

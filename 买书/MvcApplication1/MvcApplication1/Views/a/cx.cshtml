@@ -1,0 +1,68 @@
+﻿@model IEnumerable<MvcApplication1.Models.s>
+
+@{
+    ViewBag.Title = "cx";
+}
+
+<h2>cx</h2>
+
+<p>
+    @Html.ActionLink("添加学生信息", "tj")
+</p>
+@using (Html.BeginForm("cx", "a", FormMethod.Post))
+{
+    @Html.Label("学号")
+    @Html.TextBox("xh")
+    @Html.Label("姓名")
+    @Html.TextBox("xm")
+    @Html.Label("学院")
+    @Html.DropDownList("xy", "全部")
+    <br />
+    <input type="submit" value="查询" />
+}
+<table>
+    <tr>
+        <th>
+           学号
+        </th>
+        <th>
+         姓名
+        </th>
+        <th>
+         性别
+        </th>
+        <th>
+          学院
+        </th>
+        <th>
+          专业
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.sno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sex)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.xy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.zy)
+        </td>
+        <td>
+            @Html.ActionLink("修改数据", "xg", new { id=item.sno }) |
+          
+            @Html.ActionLink("删除", "sc", new { id=item.sno })
+        </td>
+    </tr>
+}
+
+</table>

@@ -13,10 +13,10 @@ namespace bookMall.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class bookMallEntities : DbContext
+    public partial class BookStoreEntities1 : DbContext
     {
-        public bookMallEntities()
-            : base("name=bookMallEntities")
+        public BookStoreEntities1()
+            : base("name=BookStoreEntities1")
         {
         }
     
@@ -25,6 +25,8 @@ namespace bookMall.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<Books> Books { get; set; }
+        public DbSet<Orders> Orders { get; set; }
         public DbSet<userTable> userTable { get; set; }
     }
 }

@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "ms";
+}
+
+<h2>ms</h2>
+@Html.ActionLink("查查你的买书历史","xq")
+<table>
+    <tr>
+        <td> 图示编号</td>
+        <td>图书名称</td>
+        <td>价格</td>
+        <td>作者</td>
+    </tr>
+    <tr>
+        <td>@ViewBag.id1</td>
+        <td>@ViewBag.mc</td>
+        <td>@ViewBag.jg</td>
+        <td>@ViewBag.zz</td>
+    </tr>
+</table>
+@using(Html.BeginForm("ms","b",FormMethod.Post))
+{
+    @Html.Label("书籍编号")
+    @Html.Display("id2")
+    @Html.Label("地址")
+    @Html.TextBox("dz")
+    @Html.Label("数量")
+    @Html.TextBox("sl")
+    <br/>
+    <input type="submit" value="购书"/>
+}

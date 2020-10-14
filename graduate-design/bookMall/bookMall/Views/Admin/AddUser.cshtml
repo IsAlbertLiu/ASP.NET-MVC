@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "AddUser";
+}
+
+<h2>添加用户</h2>
+@using(Html.BeginForm("AddUser","Admin",FormMethod.Post)){
+    @Html.Label("用户名");
+    @Html.TextBox("userName");
+    @Html.Label("密码");
+    @Html.TextBox("passWord");
+    @Html.Label("用户角色");
+    @Html.DropDownList("role");
+    
+    <input type="submit" value="添加" />
+}

@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "tj";
+}
+
+<h2>tj</h2>
+@using (@Html.BeginForm("tj", "a", FormMethod.Post))
+{
+    @Html.Label("学号")
+    @Html.TextBox("xh")
+    @Html.Label("姓名")
+    @Html.TextBox("xm")
+    @Html.Label("性别")
+    @Html.DropDownList("xb")
+    @Html.Label("学院")
+    @Html.DropDownList("xy1")
+    @Html.Label("专业")
+    @Html.DropDownList("zy1")
+    <input type="submit" value="添加" />
+}
