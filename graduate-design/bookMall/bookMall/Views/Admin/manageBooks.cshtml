@@ -1,0 +1,58 @@
+﻿@model IEnumerable<bookMall.Models.Books>
+
+@{
+    ViewBag.Title = "manageBooks";
+}
+
+<h2>管理图书</h2>
+
+<p>
+    @Html.ActionLink("添加图书", "AddBooks")
+</p><h2>书籍列表</h2>
+<table>
+    <tr>
+        <th>
+            编号
+        </th>
+        <th>
+            标题
+        </th>
+        <th>
+            封面
+        </th>
+        <th>
+            价格
+        </th>
+        <th>
+            作者
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookTitle)
+            </td>
+            <td>
+                <img src="@item.BookCoverUrl" height="100">
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Authors)
+            </td>
+            <td>
+                @Html.ActionLink("修改", "midifyBooks", new { id = item.BookId })
+                @Html.ActionLink("删除", "delBooks", new { id = item.BookId })
+            </td>
+        </tr>
+    }
+
+</table>

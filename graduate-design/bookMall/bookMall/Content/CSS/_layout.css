@@ -1,11 +1,11 @@
 ﻿html {
-background-color: #e2e2e2;
+background: rgb(219, 243, 242);
 margin: 0;
 padding: 0;
 }
 
 body {
-background-color: #fff;
+background: rgb(219, 243, 242);
 color: #333;
 font-size: .85em;
 font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
@@ -98,7 +98,7 @@ max-width: 960px;
 }
 
 #body {
-background-color: #efeeef;
+background: rgb(219, 243, 242);
 clear: both;
 padding-bottom: 35px;
 }

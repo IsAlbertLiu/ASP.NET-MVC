@@ -146,11 +146,84 @@ namespace bookMall.Controllers
             Books addBook = new Books() { BookTitle = bookTitle, Price = bookPrice, Authors = bookAuthor, BookCoverUrl = "/Content/Images/" + filename };
             db.Books.Add(addBook);
             db.SaveChanges();
-            //return RedirectToAction("../Books/Index");
+
+            return RedirectToAction("manageBooks");
+
+        }
+
+
+        // 管理图书
+        public ActionResult manageBooks()
+        {
+
+            var showBooks = db.Books;
+            return View(showBooks);
+        }
+
+        // 删除图书
+        public ActionResult delBooks(int id )
+        {
+            var deleteBook = db.Books.Where(b => b.BookId == id).FirstOrDefault();
+            db.Books.Remove(deleteBook);
+            db.SaveChanges();
+            return RedirectToAction("manageBooks");
+        }
+
+        // 修改图书
+        public ActionResult midifyBooks(int id) {
+
+            var info = db.Books.Where(b => b.BookId == id).FirstOrDefault();//根据传过来的 书籍 id 来查询书籍信息
+            ViewBag.bookId = id;
+            ViewBag.bookTitle = info.BookTitle;
+            ViewBag.bookPrice = info.Price;
+            ViewBag.bookAuthor = info.Authors;
             return View();
+        }
+
+        // 修改图书
+        [HttpPost]
+        public ActionResult midifyBooks(int id, string bookTitle, float bookPrice, string bookAuthor, FormCollection form)
+        {
+            string filename;
+
+            if (Request.Files.Count == 0)
+            {
+                //Request.Files.Count 文件数为0上传不成功
+                return View();
+            }
+            var file = Request.Files[0];
+            if (file.ContentLength == 0)
+            {
+                //文件大小大（以字节为单位）为0时，做一些操作
+                return View();
+            }
+            else
+            {
+                //文件大小不为0
+                file = Request.Files[0];
+                //保存成自己的文件全路径,newfile就是你上传后保存的文件,
+                //服务器上的UpLoadFile文件夹必须有读写权限
+                string target = Server.MapPath("/") + ("/Content/Images/");//取得目标文件夹的路径
+                filename = file.FileName;//取得文件名字
+                string path = target + filename;//获取存储的目标地址
+                ViewBag.url = path;
+                file.SaveAs(path);
+            }
+           
+            var info = db.Books.Where(b => b.BookId == id).FirstOrDefault();
+            info.BookTitle = bookTitle;
+            info.Price = (decimal)bookPrice;
+            info.Authors = bookAuthor;
+            info.BookCoverUrl = "/Content/Images/" + filename;
+            db.SaveChanges();
+            return RedirectToAction("manageBooks");
         }
 
 
 
+        // 生成一个管理面板
+        public ActionResult managePanel() {
+            return View();
+        }
     }
 }

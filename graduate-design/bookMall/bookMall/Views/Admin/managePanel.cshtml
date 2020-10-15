@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "managePanel";
+}
+
+
+
+
+
+<div class="nav-item">
+    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        <span class="glyphicon glyphicon-asterisk"></span>
+        <span>管理面板</span>
+    </a>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" style="">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header"><span class="glyphicon glyphicon-align-left"></span>管理类别：</h6>
+
+            <span class="glyphicon glyphicon-user"></span>
+            @Html.ActionLink("管理用户", "Select", "Admin", new { @class = "slogn collapse-item" })
+
+            <span class="glyphicon glyphicon-book"></span>
+            @Html.ActionLink("管理图书", "manageBooks", "Admin", new { @class = "slogn collapse-item" })
+        </div>
+    </div>
+</div>

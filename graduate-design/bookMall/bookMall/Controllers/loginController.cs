@@ -31,7 +31,7 @@ namespace bookMall.Controllers
                 Session["name"] = userName;
                 if (haveUser.role == "admin")
                 {
-                    return RedirectToAction("admin");
+                    return RedirectToAction("Select");
                 }
                 else
                 {

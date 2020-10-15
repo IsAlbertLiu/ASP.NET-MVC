@@ -1,0 +1,23 @@
+﻿@model bookMall.Models.Books
+
+@{
+    ViewBag.Title = "midifyBooks";
+}
+
+<h2>修改书籍</h2>
+
+@using (Html.BeginForm("midifyBooks", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.Label("书籍编号");
+    @Html.Display("bookId");
+    @Html.Label("书籍名称");
+    @Html.TextBox("bookTitle");
+    @Html.Label("书籍价格");
+    @Html.TextBox("bookPrice");
+    @Html.Label("书籍作者");
+    @Html.TextBox("bookAuthor");
+
+    @Html.Label("书籍封面");
+    <text>选择上传文件：</text><input name="file" type="file" id="file" />
+    <input type="submit" name="Upload" value="修改" />
+}
