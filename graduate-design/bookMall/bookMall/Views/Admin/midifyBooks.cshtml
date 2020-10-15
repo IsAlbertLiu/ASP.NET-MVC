@@ -8,7 +8,45 @@
 
 @using (Html.BeginForm("midifyBooks", "Admin", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    @Html.Label("书籍编号");
+    <table class="table">
+        <tr class="warning">
+            <th>添加信息</th>
+            <th></th>
+            <th>内容</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("书籍名称")
+            </td>
+            <td>
+                @Html.TextBox("bookTitle")
+            </td>
+            <td>
+                @Html.Label("书籍价格")
+            </td>
+            <td>
+                @Html.TextBox("bookPrice")
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("书籍作者")
+            </td>
+            <td>
+               @Html.TextBox("bookAuthor")
+            </td>
+            <td>
+                <span>选择上传文件：</span>
+            </td>
+            <td>
+                <input name="file" type="file" id="file" />
+            </td>
+        </tr>
+    </table>
+      <button class="btn btn-success " type="submit" name="Upload" >修改</button>
+
+    @*@Html.Label("书籍编号");
     @Html.Display("bookId");
     @Html.Label("书籍名称");
     @Html.TextBox("bookTitle");
@@ -19,5 +57,5 @@
 
     @Html.Label("书籍封面");
     <text>选择上传文件：</text><input name="file" type="file" id="file" />
-    <input type="submit" name="Upload" value="修改" />
+    <input type="submit" name="Upload" value="修改" />*@
 }

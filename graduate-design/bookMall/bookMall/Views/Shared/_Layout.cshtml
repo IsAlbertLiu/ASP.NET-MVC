@@ -6,22 +6,25 @@
         <title>@ViewBag.Title - 网上书店</title>
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
-        <link href="/Content/CSS/_layout.css" rel="stylesheet" />
+        @*<link href="/Content/CSS/_layout.css" rel="stylesheet" />*@
+        <link href="/Content/CSS/layout.css" rel="stylesheet" />
+        <link href="/Content/CSS/managePanelCSS.css" rel="stylesheet" />
+        <link href="/Content/CSS/Books-Index.css" rel="stylesheet" />
         <link href="/Content/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
         <script src="/Content/bootstrap/js/jquery-3.5.1.js"></script>
         <script src="/Content/bootstrap/js/bootstrap.min.js"></script>
         @Scripts.Render("~/bundles/modernizr")
     </head>
-    <body>
+    <body class="container">
         <header>
             <div class="content-wrapper">
-                <div class="float-left">
+                <div class="pull-left">
                     <p class="site-title">
                         <img src="../../Content/logo.png" width="140" height="70" alt="Alternate Text" />
-                        @Html.ActionLink("BookMall", "Index", "Books", new { @class = "slogn" })
+                        @Html.ActionLink("BookMall", "../Books/Index", new { @class = "slogn" })
                     </p>
                 </div>
-                <div class="float-right">
+                <div class="pull-right">
                     <section id="login">
                         @Html.ActionLink("登陆", "../login/Index")
                         @Html.ActionLink("注册", "../login/register")
@@ -45,8 +48,8 @@
         <footer>
             <div class="content-wrapper">
                 <div class="text-center">
-                    <h5 style="padding:0;margin:0"> 网上书城--毕业设计</h5>
-                    <p>&copy; @DateTime.Now.Year --Made by 刘流</p>
+                    <p> 网上书城--毕业设计
+                    &copy; @DateTime.Now.Year --Made by 刘流</p>
                 </div>
             </div>
         </footer>

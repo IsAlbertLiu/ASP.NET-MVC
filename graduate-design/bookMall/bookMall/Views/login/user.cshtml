@@ -4,5 +4,14 @@
 
 <h2>这是普通用户页面</h2>
 <br/>
-<h2>当前登陆用户： @Session["name"]</h2>
-@Html.ActionLink("修改密码功能","changePassword")
+<table class="table">
+    <tr class="info">
+        <th>当前登陆用户：</th>
+    </tr>
+    <tr class="warning">
+        <th> @Session["name"] </th>
+    </tr>
+</table>
+<button class="btn btn-success" >
+    @Html.ActionLink("修改密码功能", "changePassword")
+</button>

@@ -1,0 +1,21 @@
+﻿body {
+}
+.text-price {
+    color:#ff6700;
+}
+
+.cellBooks {
+    background-color: white;
+    padding:30px 0;
+    height:334px;
+    width:260px;
+    float:left;
+    margin-left:20px;
+    margin-bottom:16px;
+}
+
+.cellBooks:hover {
+    position:relative;
+    transition: bottom 10s ease-out;
+    bottom:5px;
+}

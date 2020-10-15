@@ -4,12 +4,42 @@
     ViewBag.Title = "manageBooks";
 }
 
-<h2>管理图书</h2>
+<h2 class="text-center">管理图书</h2>
+<div class="nav-item container mangePanel">
 
-<p>
+    <button class="nav-link collapsed btn btn-success" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        <span class="glyphicon glyphicon-asterisk"></span>
+        <span>管理面板</span>
+    </button>
+    <br />
+    <br />
+
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" style="">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header text-info"><span class="glyphicon glyphicon-align-left"></span>管理类别：</h6>
+
+            <button class="btn btn-info">
+                <span class="glyphicon glyphicon-user"></span>
+                @Html.ActionLink("管理用户", "Select", "Admin", new { @class = "slogn collapse-item" })
+            </button>
+            <br />
+            <br />
+            <button class="btn btn-info">
+                <span class="glyphicon glyphicon-book"></span>
+                @Html.ActionLink("管理图书", "manageBooks", "Admin", new { @class = "slogn collapse-item" })
+            </button>
+
+        </div>
+    </div>
+</div>
+
+<button class="btn btn-info">
     @Html.ActionLink("添加图书", "AddBooks")
-</p><h2>书籍列表</h2>
-<table>
+</button>
+
+
+<h2>书籍列表</h2>
+<table class="table table-striped">
     <tr>
         <th>
             编号
@@ -49,9 +79,16 @@
                 @Html.DisplayFor(modelItem => item.Authors)
             </td>
             <td>
-                @Html.ActionLink("修改", "midifyBooks", new { id = item.BookId })
-                @Html.ActionLink("删除", "delBooks", new { id = item.BookId })
-            </td>
+                <button class="btn btn-success">
+                    @Html.ActionLink("修改", "midifyBooks", new { id = item.BookId })
+                 </button>
+
+                <button class="btn btn-danger">
+                    @Html.ActionLink("删除", "delBooks", new { id = item.BookId })
+
+
+                </button>
+</td>
         </tr>
     }
 

@@ -4,9 +4,9 @@
     ViewBag.Title = "historyOrders";
 }
 
-<h2>我的买书记录</h2>
+<h2 class="text-center">我的买书记录</h2>
 
-<table>
+<table class="table table-striped table-hover">
     <tr>
         <th>
             订单编号
@@ -39,8 +39,9 @@
             @Html.DisplayFor(modelItem => item.Num)
         </td>
         <td>
-           
-            @Html.ActionLink("删除订单", "deleteOrder", new { id = item.OrderId })
+           <button class="btn btn-danger">
+               @Html.ActionLink("删除订单", "deleteOrder", new { id = item.OrderId })
+           </button>
         </td>
     </tr>
 }

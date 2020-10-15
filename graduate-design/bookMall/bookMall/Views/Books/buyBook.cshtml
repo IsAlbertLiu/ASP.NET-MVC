@@ -2,9 +2,13 @@
     ViewBag.Title = "buyBook";
 }
 
-<h2>买书</h2>
+<h2 class="text-center">买书</h2>
+
+<button class="btn btn-info">
 @Html.ActionLink("查看我的买书历史", "historyOrders")
-<table>
+
+</button>
+<table class="table table-striped">
     <tr>
         <td> 图示编号</td>
         <td>图书名称</td>
@@ -20,12 +24,28 @@
 </table>
 @using (Html.BeginForm("buyBook", "Books", FormMethod.Post))
 {
-    @Html.Label("书籍编号")
-    @Html.Display("bookId1")
-    @Html.Label("地址")
-    @Html.TextBox("address")
-    @Html.Label("数量")
-    @Html.TextBox("count")
+    <table class="table">
+        <tr class="success">
+            <td>
+                @Html.Label("书籍编号")
+            </td>
+            <td>
+                @Html.Display("bookId1")
+            </td>
+            <td>
+                @Html.Label("地址")
+            </td>
+            <td>
+                @Html.TextBox("address")
+            </td>
+            <td>
+                @Html.Label("数量")
+            </td>
+            <td>
+                @Html.TextBox("count")
+            </td>
+        </tr>
+    </table>
     <br />
-    <input type="submit" value="购书" />
+    <button class="btn btn-success" type="submit" value="" >购书</button>
 }

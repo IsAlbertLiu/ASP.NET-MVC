@@ -2,23 +2,47 @@
     ViewBag.Title = "Index";
 }
 
-<h2 class="text-center">用户登录</h2>
+<h2 class="text-center pad-10">用户登录</h2>
 
 @using (Html.BeginForm("Index", "Login", FormMethod.Post, new { @class = "caption" }))
 {
+    <div class="container">
 
-    <div class="col-md-6 col-md-offset-3">
-
-        <div class="form-group">
-            @Html.Label("用户名")
-            @Html.TextBox("userName", "", new { @class = "form-control" })
+        <div class="col-md-6">
+            <img src="../../Images/signUp.png" alt="Alternate Text" width="400" />
         </div>
-        <div class="form-group">
+
+        <div class="col-md-6">
+            <table class="table">
+                <tr>
+                    <td>
+                        @Html.Label("用户名")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.TextBox("userName")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Label("密码:")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.TextBox("passWord")
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+
+        @*@Html.TextBox("userName", "", new { @class = "form-control" })
             @Html.Label("密码")
-            @Html.Password("passWord", "", new { @class = "form-control" })
-        </div>
+            @Html.Password("passWord", "", new { @class = "form-control" })*@
 
-        <input type="submit" class="btn btn-primary active pull-right" value="登陆" />
+        <input type="submit" class="btn btn-success active pull-left" value="登陆" />
     </div>
 
 }

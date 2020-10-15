@@ -2,14 +2,30 @@
     ViewBag.Title = "Modify";
 }
 
-<h2>修改页面</h2>
+<h2 class="text-center">修改页面</h2>
 @using (Html.BeginForm("modify","Admin",FormMethod.Post)) { 
-    @Html.Label("用户名")
-    @Html.TextBox("userName");
-    @*@Html.Display("userName")*@
-    @Html.Label("密码")
-    @Html.TextBox("passWord");
-    @Html.Label("用户角色")
-    @Html.DropDownList("role",ViewBag.role2 as IEnumerable<SelectListItem>)
-    <input type="submit" value="修改" />
+    <table class="table">
+        <tr class="success">
+            <td>
+                @Html.Label("用户名")
+            </td>
+            <td>
+                @Html.TextBox("userName")
+            </td>
+            <td>
+                @Html.Label("密码")
+            </td>
+            <td>
+                @Html.TextBox("passWord")
+            </td>
+            <td>
+                @Html.Label("用户角色")
+            </td>
+            <td>
+                @Html.DropDownList("role", ViewBag.role2 as IEnumerable<SelectListItem>)
+            </td>
+        </tr>
+    </table>
+
+    <button class="btn btn-success" type="submit" value="修改">修改</button>
 }

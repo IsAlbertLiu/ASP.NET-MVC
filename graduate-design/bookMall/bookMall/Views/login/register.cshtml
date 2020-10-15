@@ -1,16 +1,54 @@
 ﻿@{
     ViewBag.Title = "register";
 }
-@using(Html.BeginForm("register","Login",FormMethod.Post)){
-    @Html.Label("用户名")
-    @Html.TextBox("userName")
-    @Html.Label("密码")
-    @Html.Password("passWord")
-    @Html.Label("确定密码")
-    @Html.Password("passWordAgain")
-    <br/>
-    <input type="submit" value="注册">
-    @ViewBag.message
+
+<h2 class="text-center">欢迎来到注册页面</h2>
+
+@using (Html.BeginForm("register", "Login", FormMethod.Post))
+{
+    <div class="container">
     
+    <div class="col-md-6">
+        <img src="../../Images/signUp.png" alt="Alternate Text"  width="400"/>
+    </div>
+
+        <div class="col-md-6">
+            <table class="table">
+                <tr>
+                    <td>
+                        @Html.Label("用户名")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.TextBox("userName")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Label("密码:")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.TextBox("passWord")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Label("确定密码:")
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.Password("passWordAgain")
+                    </td>
+                </tr>
+            </table>
+
+            <button type="submit" class="btn btn-success" value="注册">注册</button>
+            @ViewBag.message
+        </div>
+    </div>
+
 }
-<h2>register</h2>

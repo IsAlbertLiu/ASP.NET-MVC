@@ -1,15 +1,61 @@
 ﻿@{
     ViewBag.Title = "AddUser";
 }
+<div class="nav-item container mangePanel">
 
-<h2>添加用户</h2>
+    <button class="nav-link collapsed btn btn-success" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        <span class="glyphicon glyphicon-asterisk"></span>
+        <span>管理面板</span>
+    </button>
+    <br />
+    <br />
+
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar" style="">
+        <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header text-info"><span class="glyphicon glyphicon-align-left"></span>管理类别：</h6>
+
+            <button class="btn btn-info">
+                <span class="glyphicon glyphicon-user"></span>
+                @Html.ActionLink("管理用户", "Select", "Admin", new { @class = "slogn collapse-item" })
+            </button>
+            <br />
+            <br />
+            <button class="btn btn-info">
+                <span class="glyphicon glyphicon-book"></span>
+                @Html.ActionLink("管理图书", "manageBooks", "Admin", new { @class = "slogn collapse-item" })
+            </button>
+
+        </div>
+    </div>
+</div>
+<h2 class="text-center">添加用户</h2>
 @using(Html.BeginForm("AddUser","Admin",FormMethod.Post)){
-    @Html.Label("用户名");
-    @Html.TextBox("userName");
-    @Html.Label("密码");
-    @Html.TextBox("passWord");
-    @Html.Label("用户角色");
-    @Html.DropDownList("role");
     
-    <input type="submit" value="添加" />
+     <table class="table">
+        <tr class="info">
+            <td >
+               @Html.Label("用户名")
+            </td>
+            <td>
+               @Html.TextBox("userName")
+            </td>
+            <td>
+                @Html.Label("密码")
+            </td>
+            <td>
+                @Html.TextBox("passWord")
+            </td>
+            <td>
+                @Html.Label("用户角色")
+            </td>
+            <td>
+                @Html.DropDownList("role")
+            </td>
+           
+        </tr>
+    </table>
+
+
+
+    <button class="btn btn-success" type="submit" value="添加"> 添加</button>
 }
