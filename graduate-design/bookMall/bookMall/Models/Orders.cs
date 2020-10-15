@@ -18,6 +18,7 @@ namespace bookMall.Models
         public string Address { get; set; }
         public int BookId { get; set; }
         public int Num { get; set; }
+        public string userName { get; set; }
     
         public virtual Books Books { get; set; }
     }

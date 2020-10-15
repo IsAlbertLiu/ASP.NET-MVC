@@ -18,6 +18,7 @@
     <Property Name="Address" Type="nvarchar" MaxLength="1024" Nullable="false" />
     <Property Name="BookId" Type="int" Nullable="false" />
     <Property Name="Num" Type="int" Nullable="false" />
+    <Property Name="userName" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="userTable">
     <Key>

@@ -12,7 +12,7 @@ namespace bookMall.Controllers
         //
         // GET: /login/
 
-        BookStoreEntities1 db = new BookStoreEntities1();
+        BookStoreEntities2 db = new BookStoreEntities2();
 
         // 显示用户登录界面
         public ActionResult Index()
@@ -52,6 +52,11 @@ namespace bookMall.Controllers
         // user page
         public ActionResult user()
         {
+            // 判断用户是否登陆
+            if (Session["name"] == null)
+            {
+                return RedirectToAction("unLogging","Books");
+            }
             return View();
         }
 

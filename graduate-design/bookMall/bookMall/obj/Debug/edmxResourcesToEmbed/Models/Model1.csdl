@@ -19,6 +19,7 @@
     <Property Name="Address" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="BookId" Type="Int32" Nullable="false" />
     <Property Name="Num" Type="Int32" Nullable="false" />
+    <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Books" Relationship="Self.FK_Orders_Books" FromRole="Orders" ToRole="Books" />
   </EntityType>
   <EntityType Name="userTable">
@@ -41,7 +42,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="BookStoreEntities1" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="BookStoreEntities2" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Books" EntityType="Self.Books" />
     <EntitySet Name="Orders" EntityType="Self.Orders" />
     <EntitySet Name="userTable" EntityType="Self.userTable" />

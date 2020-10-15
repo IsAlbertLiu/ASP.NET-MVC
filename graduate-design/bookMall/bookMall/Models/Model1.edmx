@@ -23,6 +23,7 @@
           <Property Name="Address" Type="nvarchar" MaxLength="1024" Nullable="false" />
           <Property Name="BookId" Type="int" Nullable="false" />
           <Property Name="Num" Type="int" Nullable="false" />
+          <Property Name="userName" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="userTable">
           <Key>
@@ -77,6 +78,7 @@
           <Property Name="Address" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="BookId" Type="Int32" Nullable="false" />
           <Property Name="Num" Type="Int32" Nullable="false" />
+          <Property Name="userName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Books" Relationship="Self.FK_Orders_Books" FromRole="Orders" ToRole="Books" />
         </EntityType>
         <EntityType Name="userTable">
@@ -99,7 +101,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BookStoreEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="BookStoreEntities2" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Books" EntityType="Self.Books" />
           <EntitySet Name="Orders" EntityType="Self.Orders" />
           <EntitySet Name="userTable" EntityType="Self.userTable" />
@@ -113,7 +115,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="BookStoreModelStoreContainer" CdmEntityContainer="BookStoreEntities1">
+        <EntityContainerMapping StorageEntityContainer="BookStoreModelStoreContainer" CdmEntityContainer="BookStoreEntities2">
           <EntitySetMapping Name="Books">
             <EntityTypeMapping TypeName="BookStoreModel.Books">
               <MappingFragment StoreEntitySet="Books">
@@ -132,6 +134,7 @@
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="BookId" ColumnName="BookId" />
                 <ScalarProperty Name="Num" ColumnName="Num" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

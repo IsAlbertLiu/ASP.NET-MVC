@@ -13,10 +13,10 @@ namespace bookMall.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BookStoreEntities1 : DbContext
+    public partial class BookStoreEntities2 : DbContext
     {
-        public BookStoreEntities1()
-            : base("name=BookStoreEntities1")
+        public BookStoreEntities2()
+            : base("name=BookStoreEntities2")
         {
         }
     

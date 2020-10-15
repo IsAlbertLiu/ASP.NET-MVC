@@ -9,7 +9,7 @@ namespace bookMall.Controllers
 {
     public class AdminController : Controller
     {
-        BookStoreEntities1 db = new BookStoreEntities1();
+        BookStoreEntities2 db = new BookStoreEntities2();
 
         /*
             这个页面是实现 admin 功能的页面。实现对用户和对图书的 ** 增删查改 ** 功能。 

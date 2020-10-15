@@ -9,7 +9,7 @@ namespace bookMall.Controllers
 {
     public class BooksController : Controller
     {
-        BookStoreEntities1 db = new BookStoreEntities1();
+        BookStoreEntities2 db = new BookStoreEntities2();
 
         //
         // GET: /Books/
@@ -25,6 +25,17 @@ namespace bookMall.Controllers
         // 买书
         public ActionResult buyBook(int id)
         {
+            // 判断用户是否登陆
+            if (Session["name"] == null)
+            {
+                return RedirectToAction("unLogging", "Books");
+            }
+            else
+            {
+                var userName = Session["name"].ToString();
+            }
+
+
             var book = db.Books.Where(b => b.BookId == id).FirstOrDefault();
             ViewBag.bookId = id;
             ViewBag.bookId1 = id;
@@ -38,7 +49,17 @@ namespace bookMall.Controllers
         [HttpPost]
         public ActionResult buyBook(int id, string address, int count)
         {
-            var order = new Orders() { BookId = id, Address = address, Num = count };
+            var userName = "";
+            // 判断用户是否登陆
+            if (Session["name"] == null)
+            {
+                return RedirectToAction("unLogging", "Books");
+            }
+            else
+            {
+                 userName = Session["name"].ToString();
+            }
+            var order = new Orders() { BookId = id, Address = address, Num = count,userName = userName };
             db.Orders.Add(order);
             db.SaveChanges();
             return RedirectToAction("historyOrders");
@@ -47,14 +68,18 @@ namespace bookMall.Controllers
         // 查询历史的订单，
         public ActionResult historyOrders()
         {
-            //var user = Session["name"].ToString();
-             // 当用户查看购物车的时候，判断用户是否登陆，如果没登陆，则不显示购物车页面
+            var userName = "";
+            // 判断用户是否登陆
             if (Session["name"] == null)
             {
-                return RedirectToAction("unLogging"); 
+                return RedirectToAction("unLogging", "Books");
+            }
+            else
+            {
+                userName = Session["name"].ToString();
             }
 
-            var a = db.Orders;
+            var a = db.Orders.Where(b => b.userName == userName);
             return View(a);
         }
         // 没有用户登陆，
