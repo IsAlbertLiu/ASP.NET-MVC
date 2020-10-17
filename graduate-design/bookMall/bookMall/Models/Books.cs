@@ -24,6 +24,8 @@ namespace bookMall.Models
         public decimal Price { get; set; }
         public string BookCoverUrl { get; set; }
         public string Authors { get; set; }
+        public string Publishing { get; set; }
+        public string PublishDate { get; set; }
     
         public virtual ICollection<Orders> Orders { get; set; }
     }

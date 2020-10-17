@@ -48,10 +48,11 @@
     <div class="cellBooks text-center">
         <div>
             <img src="@item.BookCoverUrl" height="120">
-            @*<img src="../../Content/Images/Image.jpg" class="cellBookImg" alt="Alternate Text" width="140" />*@
         </div>
-        <p class="cellBookTitle ">@Html.DisplayFor(modelItem => item.BookTitle)</p>
+        <p class="cellBookTitle">@Html.DisplayFor(modelItem => item.BookTitle)</p>
         <p class="cellBookAuthor">@Html.DisplayFor(modelItem => item.Authors)</p>
+        <p class="cellBookPublishing">@Html.DisplayFor(modelItem => item.Publishing)</p>
+        <p class="cellBookPublishDate">@Html.DisplayFor(modelItem => item.PublishDate)</p>
         <p class="cellBookPrice text-price">@Html.DisplayFor(modelItem => item.Price) 元</p>
         <button class="cellBookBuy">@Html.ActionLink("购书", "buyBook", new { id = item.BookId })</button>
    </div>

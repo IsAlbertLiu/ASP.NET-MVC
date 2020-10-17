@@ -23,19 +23,34 @@
                 @Html.TextBox("bookTitle")
             </td>
             <td>
+                @Html.Label("书籍作者")
+            </td>
+            <td>
+                @Html.TextBox("bookAuthor")
+            </td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("出版社")
+            </td>
+            <td>
+                @Html.TextBox("bookPublishing")
+            </td>
+            <td>
+                @Html.Label("出版日期")
+            </td>
+            <td>
+                @Html.TextBox("bookPublishingDate")
+            </td>
+        </tr>
+        <tr>
+            <td>
                 @Html.Label("书籍价格")
             </td>
             <td>
                 @Html.TextBox("bookPrice")
             </td>
-        </tr>
-        <tr>
-            <td>
-                @Html.Label("书籍作者")
-            </td>
-            <td>
-               @Html.TextBox("bookAuthor")
-            </td>
+
             <td>
                 <span>选择上传文件：</span>
             </td>

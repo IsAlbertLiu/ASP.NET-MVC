@@ -54,9 +54,14 @@
             价格
         </th>
         <th>
+            出版社
+        </th>
+        <th>
+            出版时间
+        </th>
+        <th>
             作者
         </th>
-        <th></th>
     </tr>
 
     @foreach (var item in Model)
@@ -74,7 +79,12 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
-
+            <td>
+                @Html.DisplayFor(modelItem => item.Publishing)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublishDate)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Authors)
             </td>

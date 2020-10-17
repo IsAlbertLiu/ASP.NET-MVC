@@ -9,7 +9,7 @@ namespace bookMall.Controllers
 {
     public class AdminController : Controller
     {
-        BookStoreEntities2 db = new BookStoreEntities2();
+        BookStoreEntities3 db = new BookStoreEntities3();
 
         /*
             这个页面是实现 admin 功能的页面。实现对用户和对图书的 ** 增删查改 ** 功能。 
@@ -23,22 +23,23 @@ namespace bookMall.Controllers
             return View();
         }
 
-        // 查询
+        // 查询所有的用户
         public ActionResult Select()
         {
             return View(db.userTable);
         }
 
+        // 根据特定的条件进行查询用户
         [HttpPost]
         public ActionResult Select(string userName)
         {
-            var a = db.userTable.Where(b => b.userName.Contains(userName) );//如果查询的用户姓名包含，就返回该学生
+            var a = db.userTable.Where(b => b.userName.Contains(userName) );
             return View(a);
         }
 
 
         
-        // 修改页面
+        // 修改 用户 页面
         public ActionResult Modify(string id)
         {
             var itRole = db.userTable.GroupBy(b => b.role).Select(c => c.FirstOrDefault());//在用户表里面查询角色信息
@@ -106,12 +107,11 @@ namespace bookMall.Controllers
         // 新增图书
         public ActionResult AddBooks() 
         {
-
             return View();
         }
 
         [HttpPost]
-        public ActionResult AddBooks(string bookTitle, int bookPrice, string bookAuthor, FormCollection form)
+        public ActionResult AddBooks(string bookTitle, int bookPrice, string bookAuthor, string bookPublishing,string bookPublishingDate, FormCollection form)
         {
 
             string filename;
@@ -140,7 +140,7 @@ namespace bookMall.Controllers
                 file.SaveAs(path);
             }
 
-            Books addBook = new Books() { BookTitle = bookTitle, Price = bookPrice, Authors = bookAuthor, BookCoverUrl = "/Content/Images/" + filename };
+            Books addBook = new Books() { BookTitle = bookTitle, Price = bookPrice, Authors = bookAuthor, PublishDate = bookPublishingDate, Publishing = bookPublishing,  BookCoverUrl = "/Content/Images/" + filename };
             db.Books.Add(addBook);
             db.SaveChanges();
 
@@ -174,12 +174,14 @@ namespace bookMall.Controllers
             ViewBag.bookTitle = info.BookTitle;
             ViewBag.bookPrice = info.Price;
             ViewBag.bookAuthor = info.Authors;
+            ViewBag.bookPublishing = info.Publishing;
+            ViewBag.bookPublishingDate = info.PublishDate;
             return View();
         }
 
         // 修改图书
         [HttpPost]
-        public ActionResult midifyBooks(int id, string bookTitle, float bookPrice, string bookAuthor, FormCollection form)
+        public ActionResult midifyBooks(int id, string bookTitle, float bookPrice, string bookAuthor, string bookPublishing, string bookPublishingDate, FormCollection form)
         {
             string filename;
 
@@ -212,6 +214,8 @@ namespace bookMall.Controllers
             info.Price = (decimal)bookPrice;
             info.Authors = bookAuthor;
             info.BookCoverUrl = "/Content/Images/" + filename;
+            info.Publishing = bookPublishing;
+            info.PublishDate = bookPublishingDate;
             db.SaveChanges();
             return RedirectToAction("manageBooks");
         }

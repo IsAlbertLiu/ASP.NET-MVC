@@ -14,6 +14,8 @@
           <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="BookCoverUrl" Type="nvarchar" MaxLength="1024" />
           <Property Name="Authors" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Publishing" Type="nvarchar" MaxLength="50" />
+          <Property Name="PublishDate" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Orders">
           <Key>
@@ -68,6 +70,8 @@
           <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="BookCoverUrl" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
           <Property Name="Authors" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Publishing" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PublishDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Books" FromRole="Books" ToRole="Orders" />
         </EntityType>
         <EntityType Name="Orders">
@@ -101,7 +105,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BookStoreEntities2" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="BookStoreEntities3" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Books" EntityType="Self.Books" />
           <EntitySet Name="Orders" EntityType="Self.Orders" />
           <EntitySet Name="userTable" EntityType="Self.userTable" />
@@ -115,7 +119,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="BookStoreModelStoreContainer" CdmEntityContainer="BookStoreEntities2">
+        <EntityContainerMapping StorageEntityContainer="BookStoreModelStoreContainer" CdmEntityContainer="BookStoreEntities3">
           <EntitySetMapping Name="Books">
             <EntityTypeMapping TypeName="BookStoreModel.Books">
               <MappingFragment StoreEntitySet="Books">
@@ -124,6 +128,8 @@
                 <ScalarProperty Name="Price" ColumnName="Price" />
                 <ScalarProperty Name="BookCoverUrl" ColumnName="BookCoverUrl" />
                 <ScalarProperty Name="Authors" ColumnName="Authors" />
+                <ScalarProperty Name="Publishing" ColumnName="Publishing" />
+                <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

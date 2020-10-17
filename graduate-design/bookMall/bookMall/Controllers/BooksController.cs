@@ -9,7 +9,7 @@ namespace bookMall.Controllers
 {
     public class BooksController : Controller
     {
-        BookStoreEntities2 db = new BookStoreEntities2();
+        BookStoreEntities3 db = new BookStoreEntities3();
 
         //
         // GET: /Books/
@@ -42,6 +42,8 @@ namespace bookMall.Controllers
             ViewBag.bookTitle = book.BookTitle;
             ViewBag.bookPrice = book.Price;
             ViewBag.bookAuthors = book.Authors;
+            ViewBag.bookPublishing = book.Publishing;
+            ViewBag.bookPublishDate = book.PublishDate;
             return View();
         }
 
@@ -108,32 +110,21 @@ namespace bookMall.Controllers
         }
 
 
+        // 搜索图书
         public ActionResult srearchBooks()
         {
-            //return RedirectToAction("resultOfSearchBooks", new  { bookTitle = bookTitle });
-
             return View();
         }
 
-        //// 发送搜索书籍的 POST 请求
+        // 发送搜索书籍的 POST 请求
         [HttpPost]
         public ActionResult srearchBooks(String bookTitle)
         {
-            //var search = db.Books.Where(b => b.BookTitle.Contains(bookTitle));
-            //return View(search);
+            // 在跳转页面的时候 携带 要搜索图书的名称
             return RedirectToAction("resultOfSearchBooks", new { bookTitle = bookTitle });
         }
 
-
-
-        //// 显示搜索书籍的结果
-        //public ActionResult resultOfSearchBooks()
-        //{
-        //    return View();
-        //}
-
-        //// 搜索书籍之后，可能会进行购买书籍，所以此处添加一个 POST 请求。
-        //[HttpPost]
+        // 显示搜索书籍的结果
         public ActionResult resultOfSearchBooks(string bookTitle)
         {
             var search = db.Books.Where(b => b.BookTitle.Contains(bookTitle));

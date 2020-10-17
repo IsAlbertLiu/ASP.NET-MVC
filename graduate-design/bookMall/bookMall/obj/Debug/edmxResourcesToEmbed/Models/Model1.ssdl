@@ -9,6 +9,8 @@
     <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
     <Property Name="BookCoverUrl" Type="nvarchar" MaxLength="1024" />
     <Property Name="Authors" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Publishing" Type="nvarchar" MaxLength="50" />
+    <Property Name="PublishDate" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Orders">
     <Key>

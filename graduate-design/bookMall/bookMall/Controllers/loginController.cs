@@ -12,7 +12,7 @@ namespace bookMall.Controllers
         //
         // GET: /login/
 
-        BookStoreEntities2 db = new BookStoreEntities2();
+        BookStoreEntities3 db = new BookStoreEntities3();
 
         // 显示用户登录界面
         public ActionResult Index()

@@ -7,7 +7,7 @@
 .cellBooks {
     background-color: white;
     padding:30px 0;
-    height:334px;
+    height:390px;
     width:260px;
     float:left;
     margin-left:20px;
@@ -18,4 +18,10 @@
     position:relative;
     transition: bottom 10s ease-out;
     bottom:5px;
+}
+
+.cellBooks .cellBookTitle{
+    padding-top:20px;
+    box-sizing: border-box;
+    height: 58px;
 }

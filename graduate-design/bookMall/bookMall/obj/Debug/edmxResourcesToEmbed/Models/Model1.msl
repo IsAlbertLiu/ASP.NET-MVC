@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="BookStoreModelStoreContainer" CdmEntityContainer="BookStoreEntities2">
+  <EntityContainerMapping StorageEntityContainer="BookStoreModelStoreContainer" CdmEntityContainer="BookStoreEntities3">
     <EntitySetMapping Name="Books">
       <EntityTypeMapping TypeName="BookStoreModel.Books">
         <MappingFragment StoreEntitySet="Books">
@@ -9,6 +9,8 @@
           <ScalarProperty Name="Price" ColumnName="Price" />
           <ScalarProperty Name="BookCoverUrl" ColumnName="BookCoverUrl" />
           <ScalarProperty Name="Authors" ColumnName="Authors" />
+          <ScalarProperty Name="Publishing" ColumnName="Publishing" />
+          <ScalarProperty Name="PublishDate" ColumnName="PublishDate" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
