@@ -63,9 +63,10 @@ line-height:100px;
 ul#menu {
 font-size: 1.3em;
 font-weight: 600;
-margin: 0 0 5px;
+margin: 35px 0 5px;
 padding: 0;
 text-align: right;
+float:left;
 }
 
 ul#menu li {
@@ -74,20 +75,30 @@ ul#menu li {
     padding-left: 15px;
 }
 
-    ul#menu li a {
+ul#menu li a {
         background: none;
         color: #999;
         text-decoration: none;
     }
 
-    ul#menu li a:hover {
+ul#menu li a:hover {
         color: #333;
         text-decoration: none;
     }
 
 
+.nav-menu{
+    width:600px;
+}
+form {
+    margin-top: 31px;
+    margin-left: 22px;
+    display: inline-block;
+}
 
-    header .site-title {
+
+
+header .site-title {
     margin: 10px;
     text-align: center;
 }
@@ -97,3 +108,18 @@ ul#menu li {
 .pad-10{
     padding:10px;
 }
+
+/*导航栏布局*/
+.site-title {
+    display:block;
+
+
+}
+.logo{
+    display:block;
+}
+.slogn{
+    display:block;
+}
+
+

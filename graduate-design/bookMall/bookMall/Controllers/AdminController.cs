@@ -15,7 +15,6 @@ namespace bookMall.Controllers
             这个页面是实现 admin 功能的页面。实现对用户和对图书的 ** 增删查改 ** 功能。 
          */
 
-
         //
         // GET: /Admin/
 
@@ -27,8 +26,6 @@ namespace bookMall.Controllers
         // 查询
         public ActionResult Select()
         {
-            //var a = db.userTable.GroupBy(b => b.).Select(c => c.FirstOrDefault());
-            //return View(db.userTable);
             return View(db.userTable);
         }
 

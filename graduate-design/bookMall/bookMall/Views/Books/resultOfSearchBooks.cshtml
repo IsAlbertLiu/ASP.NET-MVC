@@ -1,0 +1,20 @@
+﻿@model IEnumerable<bookMall.Models.Books>
+
+
+@{
+    ViewBag.Title = "resultOfSearchBooks";
+}
+
+<h2 class="text-center" style="padding:20px">搜索结果</h2>
+@foreach (var item in Model)
+    {
+        <div class="cellBooks text-center">
+            <div>
+                <img src="@item.BookCoverUrl" height="120">
+            </div>
+            <p class="cellBookTitle ">@Html.DisplayFor(modelItem => item.BookTitle)</p>
+            <p class="cellBookAuthor">@Html.DisplayFor(modelItem => item.Authors)</p>
+            <p class="cellBookPrice text-price">@Html.DisplayFor(modelItem => item.Price) 元</p>
+            <button class="cellBookBuy">@Html.ActionLink("购书", "buyBook", new { id = item.BookId })</button>
+        </div>
+    }

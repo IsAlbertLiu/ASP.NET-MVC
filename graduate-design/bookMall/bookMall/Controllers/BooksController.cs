@@ -106,5 +106,42 @@ namespace bookMall.Controllers
 
             return RedirectToAction("historyOrders");
         }
+
+
+        public ActionResult srearchBooks()
+        {
+            //return RedirectToAction("resultOfSearchBooks", new  { bookTitle = bookTitle });
+
+            return View();
+        }
+
+        //// 发送搜索书籍的 POST 请求
+        [HttpPost]
+        public ActionResult srearchBooks(String bookTitle)
+        {
+            //var search = db.Books.Where(b => b.BookTitle.Contains(bookTitle));
+            //return View(search);
+            return RedirectToAction("resultOfSearchBooks", new { bookTitle = bookTitle });
+        }
+
+
+
+        //// 显示搜索书籍的结果
+        //public ActionResult resultOfSearchBooks()
+        //{
+        //    return View();
+        //}
+
+        //// 搜索书籍之后，可能会进行购买书籍，所以此处添加一个 POST 请求。
+        //[HttpPost]
+        public ActionResult resultOfSearchBooks(string bookTitle)
+        {
+            var search = db.Books.Where(b => b.BookTitle.Contains(bookTitle));
+            return View(search);
+        }
+
+
+
+
     }
 }

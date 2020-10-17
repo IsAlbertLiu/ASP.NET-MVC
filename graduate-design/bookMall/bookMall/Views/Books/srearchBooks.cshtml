@@ -1,0 +1,15 @@
+﻿
+
+@{
+    ViewBag.Title = "srearchBooks";
+    
+}
+
+
+@using (Html.BeginForm("srearchBooks", "Books", FormMethod.Post))
+{
+    @Html.TextBox("bookTitle")
+    
+    <button class="btn btn-success" type="submit">搜索书籍</button>
+}
+

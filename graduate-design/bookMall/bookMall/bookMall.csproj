@@ -387,6 +387,8 @@
     <Content Include="Views\Admin\manageBooks.cshtml" />
     <Content Include="Views\Admin\midifyBooks.cshtml" />
     <Content Include="Views\Admin\managePanel.cshtml" />
+    <Content Include="Views\Books\srearchBooks.cshtml" />
+    <Content Include="Views\Books\resultOfSearchBooks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
